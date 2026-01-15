@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Kushal Plast</title>
+    <!-- Fonts & CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;700;800&display=swap"
+        rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/kushal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .contact-detail {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-detail i {
+            color: var(--secondary-color);
+            margin-top: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+            font-family: var(--font-main);
+        }
+
+        .form-control:focus {
+            outline: 2px solid var(--secondary-color);
+            border-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.jpg" alt="KP Logo">
+                <span>Kushal Plast</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="technology.html" class="nav-link">Technology</a></li>
+                    <li><a href="clients.html" class="nav-link">Our Clients</a></li>
+                    <li><a href="contact.html" class="nav-link active">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <section class="section-padding" style="background-color: #000000; color: #ffffff; padding: 2.5rem 0;">
+        <div class="container" style="text-align: center;">
+            <h1 style="color: #ffffff; margin-bottom: 0; font-size: 3.5rem;">Get In Touch</h1>
+            <p style="color: var(--text-light); opacity: 0.8;">We'd love to hear from you</p>
+        </div>
+    </section>
+
+    <!-- Contact Info & Form -->
+    <section class="section-padding container">
+        <div class="contact-grid">
+
+            <!-- Info Column -->
+            <div>
+                <div class="contact-card mb-4" style="margin-bottom: 2rem;">
+                    <h3>Contact Information</h3>
+                    <div class="contact-detail">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <strong>Phone Numbers:</strong><br>
+                            <a href="tel:+919820025278" style="color: inherit; text-decoration: none;">+91
+                                9820025278</a> <br>
+                            <a href="tel:+919324140191" style="color: inherit; text-decoration: none;">+91
+                                9324140191</a>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <strong>Email:</strong><br>
+                            <a href="mailto:kushalplast@gmail.com"
+                                style="color: inherit; text-decoration: none;">kushalplast@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-card" style="margin-bottom: 2rem;">
+                    <h3>Our Locations</h3>
+                    <div class="contact-detail">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <strong>Factory Address:</strong><br>
+                            Kushal Plast<br>
+                            Plot No. 329/1, Behind Patel Cricket Ground,<br>
+                            Kachigam, Daman (U.T.)<br>
+                            Pin Code - 396 210
+                        </div>
+                    </div>
+                    <hr style="border: 0; border-top: 1px solid #eee; margin: 1rem 0;">
+                    <div class="contact-detail">
+                        <i class="fa-solid fa-building"></i>
+                        <div>
+                            <strong>Office Address:</strong><br>
+                            Kushal Plast<br>
+                            4, Prem Industrial Estate, Subhash Road,<br>
+                            Jogeshwari (East), Mumbai - 400 060
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Column -->
+            <div class="contact-card" style="height: fit-content;">
+                <h3>Locate Us</h3>
+                <div style="width: 100%; height: 400px; background-color: #eee; border-radius: 5px; overflow: hidden;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3739.861539437292!2d72.884305!3d20.388597999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0d01401c7d53f%3A0xa8177e2a4897bbdd!2sKushal%20Plast!5e0!3m2!1sen!2sin!4v1766521129198!5m2!1sen!2sin"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-col" style="flex: 2;">
+                <div class="logo" style="margin-bottom: 1rem;">
+                    <img src="assets/images/logo.jpg" alt="KP Logo" style="height: 40px; border-radius: 4px;">
+                    <span style="color: #fff;">Kushal Plast</span>
+                </div>
+                <p style="color: #ccc; max-width: 300px;">
+                    Premier manufacturers of Plastic Blow Moulding and Injection Moulding packaging solutions.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col" style="flex: 1.5;">
+                <h3>Contact Info</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-phone"></i> <a href="tel:+919820025278"
+                            style="color: inherit; text-decoration: none;">+91 98200 25278</a></li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:+919324140191"
+                            style="color: inherit; text-decoration: none;">+91 93241 40191</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:kushalplast@gmail.com"
+                            style="color: inherit; text-decoration: none;">kushalplast@gmail.com</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Daman | Mumbai</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Kushal Plast. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

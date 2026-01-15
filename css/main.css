@@ -1,0 +1,586 @@
+/* Global Styles & Variables - Carbon + Blue Brand */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap');
+
+:root {
+  /* Core Colors */
+  --primary-color: #0E5398;
+  /* User Requested Blue */
+  --primary-dark: #09386b;
+  --text-black: #000000;
+  --text-dark: #1f1f1f;
+  --text-gray: #525252;
+
+  --bg-color: #fcfcfc;
+  --surface-color: #ffffff;
+
+  --shadow-standard: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  /* Typography */
+  --font-main: 'Open Sans', sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
+  --spacing-md: 1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  line-height: 1.6;
+  opacity: 0;
+  animation: pageLoad 0.5s ease-out forwards;
+  overflow-x: hidden;
+}
+
+/* Page Transition Animation */
+@keyframes pageLoad {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Ensure text wrapping everywhere */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+div {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--text-black);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1300px;
+  /* Increased slightly for single line fit */
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Navbar - Standard Sticky Style */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #eee;
+  height: 80px;
+  /* Gently reduced */
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.logo img {
+  height: 45px;
+  width: auto;
+}
+
+.logo span {
+  color: var(--primary-color);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-link {
+  font-weight: 700;
+  color: #444;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+/* Active/Hover - Lighter Pill (Requested) */
+.nav-link:hover,
+.nav-link.active {
+  background-color: rgba(14, 83, 152, 0.1);
+  /* Light tint */
+  color: var(--primary-color);
+  /* Blue Text */
+  transform: translateY(-1px);
+  box-shadow: none;
+  /* Removed solid shadow */
+  border: 1px solid rgba(14, 83, 152, 0.2);
+  /* Subtle border */
+}
+
+.nav-link::after {
+  display: none;
+}
+
+/* Mobile Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+/* Page Headers - Reduced Dimensions */
+.page-header {
+  background: #000000;
+  /* Pure Black */
+  color: #ffffff;
+  /* Pure White */
+  padding: 2.5rem 0;
+  /* Reduced Height */
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.page-header .page-title {
+  font-size: 2.2rem;
+  margin-bottom: 0.2rem;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.page-header .section-subtitle {
+  color: #e5e5e5;
+  opacity: 0.9;
+  font-weight: 600;
+}
+
+/* Sections */
+.section-padding {
+  padding: 4rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  color: #111;
+}
+
+.section-subtitle {
+  color: var(--primary-color);
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+}
+
+font-size: 0.9rem;
+letter-spacing: 1px;
+}
+
+/* Hero - Fixed Height (Upper Block Only) */
+/* =========================================
+   Hero Banner Scaffolding (Rewritten) 
+   ========================================= */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  /* Fixed Banner Height */
+  background-color: #f1f1f1;
+  /* Fallback grey */
+  overflow: hidden;
+  /* CRITICAL: Crops everything outside */
+  z-index: 10;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  z-index: 1;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* The Overlay - Strictly confined to the slide */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* 50% Black dim */
+  z-index: 3;
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 4;
+  /* Above overlay */
+  text-align: center;
+  color: white;
+  padding: 0 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.hero-btns {
+  margin-top: 1rem;
+}
+
+/* Dots */
+.hero-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 5;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dot.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2.2rem;
+  border-radius: 4px;
+  /* Professional squared look */
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--text-on-primary);
+  border: 1px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: #333;
+  border-color: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline {
+  border: 1px solid white;
+  color: white;
+  margin-left: 1rem;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: black;
+}
+
+/* Sections */
+.section-padding {
+  padding: 5rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  color: var(--text-heading);
+}
+
+/* About Preview */
+.about-preview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* Product Cards - Enhanced UI */
+.products-grid,
+.contact-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.product-card,
+.contact-card {
+  background: var(--surface-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.product-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.product-info,
+.contact-card {
+  padding: 2rem;
+}
+
+.product-title {
+  font-size: 1.3rem;
+  color: var(--text-heading);
+  margin-bottom: 0.5rem;
+}
+
+.product-info p,
+.contact-detail {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Contact Specific */
+.contact-card h3 {
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-detail i {
+  color: var(--primary-color);
+  margin-top: 5px;
+}
+
+/* Footer - Revised for Visibility */
+.footer {
+  background-color: #111;
+  /* Dark footer */
+  color: #fff;
+  padding-top: 4rem;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #333;
+}
+
+.footer h3 {
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  border-left: 4px solid var(--primary-color);
+  padding-left: 10px;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: #ccc;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  color: var(--primary-color);
+  padding-left: 5px;
+}
+
+/* Contact Info in Footer */
+.contact-info li {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+.contact-info i {
+  color: var(--primary-color);
+  margin-top: 5px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1.5rem;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* Page Headers (Specific) */
+.page-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--surface-color);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    transform: translateY(-150%);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+  }
+
+  .about-preview {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .page-title {
+    font-size: 2.5rem;
+  }
+}
