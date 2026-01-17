@@ -622,6 +622,12 @@ section.hero#home-hero {
     padding: 10px;
     /* Bigger touch target */
     cursor: pointer;
+    flex-shrink: 0;
+    /* CRITICAL: Prevent Chrome from crushing it to 0px */
+    width: 48px;
+    /* Explicit width safety */
+    height: 48px;
+    /* Explicit height safety */
   }
 
   /* Ensure SVG or Icon inside is visible */
