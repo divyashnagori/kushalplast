@@ -322,8 +322,7 @@ section.hero#home-hero {
   margin: 0 auto;
 }
 
-.hero-content h1,
-.hero-content h2.hero-title-style {
+.hero-content h1 {
   font-size: 2.8rem;
   color: white;
   margin-bottom: 0.5rem;
