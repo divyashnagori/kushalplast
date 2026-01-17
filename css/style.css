@@ -695,6 +695,25 @@ ul {
     .hero-dots {
       bottom: 20px;
     }
+
+    /* ROBUST HAMBURGER - Applies to Tablet & Mobile */
+    .hamburger {
+      display: flex !important;
+      color: var(--primary-color) !important;
+      font-size: 1.8rem;
+      z-index: 9999;
+      border: 1px solid #ccc;
+      /* Fallback border */
+      padding: 5px;
+      border-radius: 4px;
+      background: white;
+      margin-left: auto;
+      /* Push to right just in case */
+    }
+
+    .hamburger i {
+      display: block !important;
+    }
   }
 
   /* Mobile Portrait (Separate Block) */
