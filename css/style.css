@@ -700,13 +700,25 @@ ul {
   /* Mobile Portrait (Separate Block) */
   @media (max-width: 480px) {
 
-    /* FORCE HAMBURGER VISIBILITY */
+    /* FORCE HAMBURGER VISIBILITY - ROBUST */
     .hamburger {
       display: flex !important;
-      color: #000 !important;
+      color: var(--primary-color) !important;
+      /* Blue for visibility */
       font-size: 1.8rem;
-      z-index: 1001;
-      /* Above everything */
+      z-index: 9999;
+      /* Max Z-index */
+      border: 1px solid #ccc;
+      /* Fallback border to prove it exists */
+      padding: 5px;
+      border-radius: 4px;
+      background: white;
+      /* Ensure background is opaque */
+    }
+
+    .hamburger i {
+      display: block !important;
+      /* Ensure icon is block */
     }
 
     .section-padding {
@@ -718,33 +730,42 @@ ul {
     }
 
     .hero {
-      height: 480px !important;
+      height: 550px !important;
       min-height: unset;
     }
 
-    /* Force Mobile Title Size */
+    /* Force Mobile Title Size - PIXEL PERFECT */
     .hero-content h1 {
-      font-size: 1.5rem !important;
-      line-height: 1.1;
-      margin-bottom: 0.5rem;
+      font-size: 24px !important;
+      /* Smaller fixed size */
+      line-height: 1.2 !important;
+      margin-bottom: 10px !important;
+      padding: 0 10px;
+      /* Prevent edge touching */
+      width: 100%;
     }
 
     .hero-content p {
       display: none !important;
-      /* Hide paragraph strictly */
+      /* Strictly Hidden */
     }
 
     /* Stack buttons for safety */
     .hero-btns {
-      flex-wrap: wrap;
-      flex-direction: column;
-      gap: 0.8rem;
+      flex-wrap: wrap !important;
+      flex-direction: column !important;
+      gap: 15px !important;
+      margin-top: 15px !important;
     }
 
     .btn {
-      width: 100%;
-      max-width: 250px;
-      /* Limit width */
+      width: 80% !important;
+      /* Not full width, but wide enough */
+      max-width: 250px !important;
+      padding: 10px 20px !important;
+      font-size: 14px !important;
+      margin: 0 auto;
+      /* Center buttons */
     }
   }
 }
