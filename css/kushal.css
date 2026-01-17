@@ -422,11 +422,17 @@ section.hero#home-hero {
   font-weight: 700;
   display: block;
   margin-bottom: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  /* Updated font-size */
 }
 
 .section-title {
-  font-size: 2.2rem;
+  font-size: 2rem !important;
+  /* Updated font-size */
+  line-height: 1.3 !important;
+  /* Fix G clipping */
+  padding-bottom: 5px;
+  /* Extra breathing room */
   color: var(--text-heading);
 }
 
@@ -572,14 +578,105 @@ section.hero#home-hero {
 
 /* Page Headers (Specific) */
 .page-title {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 2.8rem;
+  /* Slightly reduced from 3rem to help fit */
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  /* Ensure space for descenders (y, g, j) */
+  white-space: nowrap;
+  /* Try to keep on one line if possible */
+  padding-bottom: 10px;
+  /* Extra protection */
+}
+
+/* Fix for Multi-line headers on smaller screens */
+@media (max-width: 900px) {
+  .page-title {
+    white-space: normal;
+    font-size: 2.2rem;
+  }
+}
+
+.section-title {
+  line-height: 1.4 !important;
+  /* Fix G clipping */
+  padding-bottom: 10px;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+
+  /* Force Gap in Navbar */
+  .navbar {
+    gap: 20px;
+    /* Ensure logical separation */
+  }
+
   .hamburger {
+    display: flex !important;
+    /* Force visibility */
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    /* Ensure above everything */
+    padding: 10px;
+    /* Bigger touch target */
+    cursor: pointer;
+  }
+
+  /* Ensure SVG or Icon inside is visible */
+  .hamburger svg,
+  .hamburger i {
+    display: block;
+    width: 28px;
+    height: 28px;
+    color: var(--primary-color);
+  }
+
+  .nav-links {
+    /* Hide nav links on mobile/tablet by default */
+    display: none;
+  }
+
+  /* Show nav links when active (mobile menu open) */
+  .nav-links.active {
     display: flex;
+  }
+
+  /* Fix Mobile Logo - Single Line */
+  .logo {
+    font-size: 1.1rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    max-width: 70%;
+    /* Reduced to ensure gap */
+    margin-right: 15px;
+    /* Explicit spacing from hamburger */
+  }
+
+  /* Robust Page Title Fix */
+  .page-title {
+    font-size: 2rem !important;
+    /* Force smaller size on mobile */
+    white-space: nowrap;
+    /* Prevent wrap */
+    overflow: visible;
+    /* Ensure y doesn't get cut if it stays on line */
+    line-height: 1.3 !important;
+    padding-bottom: 5px;
+  }
+
+  /* Very small screens */
+  @media (max-width: 360px) {
+    .page-title {
+      font-size: 1.8rem !important;
+      /* Even smaller for iPhone SE etc */
+    }
+  }
+
+  .logo img {
+    height: 35px;
+    /* Scale down image slightly */
   }
 
   .nav-links {
