@@ -691,12 +691,24 @@ ul {
       font-size: 0.85rem;
     }
 
+    /* Fix Dots overlap */
     .hero-dots {
       bottom: 20px;
     }
   }
 
+  /* Mobile Portrait (Separate Block) */
   @media (max-width: 480px) {
+
+    /* FORCE HAMBURGER VISIBILITY */
+    .hamburger {
+      display: flex !important;
+      color: #000 !important;
+      font-size: 1.8rem;
+      z-index: 1001;
+      /* Above everything */
+    }
+
     .section-padding {
       padding: 3rem 0;
     }
@@ -707,16 +719,32 @@ ul {
 
     .hero {
       height: 480px !important;
-      /* Slightly taller for very narrow */
+      min-height: unset;
     }
 
+    /* Force Mobile Title Size */
     .hero-content h1 {
-      font-size: 1.4rem;
+      font-size: 1.5rem !important;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
     }
 
-    /* If screen very narrow, stack buttons back */
+    .hero-content p {
+      display: none !important;
+      /* Hide paragraph strictly */
+    }
+
+    /* Stack buttons for safety */
     .hero-btns {
       flex-wrap: wrap;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .btn {
+      width: 100%;
+      max-width: 250px;
+      /* Limit width */
     }
   }
 }
