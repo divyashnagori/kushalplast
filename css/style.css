@@ -612,55 +612,87 @@ ul {
       font-size: 0.85rem;
     }
 
-    /* Hero Adjustments - Clean & Compact */
+    /* Hero Adjustments - Mobile Overflow Fix */
     .hero {
-      height: 400px !important;
-      /* Standard mobile height */
-      max-height: 80vh !important;
+      height: auto !important;
+      /* Allow growing */
+      min-height: 450px;
+      padding-bottom: 60px;
+      /* Space for dots */
+      display: flex;
+      /* Flex to center vertical */
+      align-items: center;
+      /* Center content vertically */
+    }
+
+    .hero-slide {
+      position: absolute;
+      /* Needs absolute for background, but content needs to flow? 
+          Actually, standard carousel structure usually requires absolute slides.
+          If slides are absolute, 'height: auto' on parent won't work well without JS setting height.
+          
+          ALTERNATIVE: Enforce internal spacing constraints.
+       */
+    }
+
+    /* Better Approach for Absolute Slides Overflow:
+       1. Maximize content area. 
+       2. Scale down drastically.
+    */
+
+    .hero {
+      height: 500px !important;
+      /* Sufficient fixed height */
     }
 
     .hero-content {
-      padding: 0 1rem;
-      max-width: 100%;
+      padding: 0 1.5rem;
+      width: 100%;
+      transform: translateY(0) !important;
+      /* Remove desktop animation offset */
+      top: 50%;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%) !important;
+      /* Dead center */
+      margin: 0;
     }
 
     .hero-content h1 {
-      font-size: 1.5rem;
-      /* Clean, smaller title */
+      font-size: 1.4rem !important;
+      /* Force small title */
       line-height: 1.2;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+      /* readable on image */
     }
 
     .hero-content p {
-      display: none;
-      /* Hide paragraph on mobile for cleaner look */
+      display: block !important;
+      /* Show it but small? User said overlapping. */
+      /* actually user said 'overflowing'. Let's keep it hidden if possible or very small */
+      display: none !important;
     }
 
     .hero-btns {
       display: flex;
-      flex-direction: row;
-      /* Side by side buttons */
-      gap: 10px;
+      flex-direction: column;
+      /* Stack is safer preventing horizontal overflow */
+      gap: 0.8rem;
       justify-content: center;
       width: 100%;
+      margin-top: 1rem;
     }
 
     .btn {
       width: auto;
-      min-width: unset;
-      /* Remove forced width */
-      padding: 0.6rem 1.2rem;
-      /* Smaller touch targets */
-      font-size: 0.8rem;
+      min-width: 180px;
+      padding: 0.7rem 1.5rem;
+      font-size: 0.85rem;
     }
 
-    .btn-outline {
-      margin-left: 0;
-    }
-
-    /* Fix Dots overlap */
     .hero-dots {
-      bottom: 15px;
+      bottom: 20px;
     }
   }
 
