@@ -66,18 +66,42 @@ dots.forEach((dot, index) => {
 // Theme Switcher Logic Removed (Carbon Monochrome is Final)
 // Code cleaned up.
 
-// Page Transition Logic (New)
+// Page Transition Logic (Optimized)
 document.addEventListener('DOMContentLoaded', () => {
+    // 1. Link Prefetching on Hover (Speed)
+    const prefetchLink = (url) => {
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.href = url;
+        document.head.appendChild(link);
+    };
+
+    const prefetchedUrls = new Set();
+
+    // 2. Smooth Transition Click Handling
     document.querySelectorAll('a').forEach(link => {
+        const href = link.getAttribute('href');
+        const isInternal = href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:') && link.target !== '_blank';
+
+        // Prefetch on hover
+        if (isInternal) {
+            link.addEventListener('mouseover', () => {
+                if (!prefetchedUrls.has(href)) {
+                    prefetchLink(href);
+                    prefetchedUrls.add(href);
+                }
+            });
+        }
+
+        // Smooth Exit
         link.addEventListener('click', (e) => {
-            const href = link.getAttribute('href');
-            if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:') && link.target !== '_blank') {
+            if (isInternal) {
                 e.preventDefault();
                 document.body.classList.add('page-exit');
 
                 setTimeout(() => {
                     window.location.href = href;
-                }, 300); // 300ms match for snappy transition
+                }, 150); // Reduced to 150ms for snappier feel
             }
         });
     });
