@@ -29,39 +29,42 @@ if (hamburger) {
 // Hero Carousel Logic
 const slides = document.querySelectorAll('.hero-slide');
 const dots = document.querySelectorAll('.dot');
-let currentSlide = 0;
-const intervalTime = 5000;
-let slideInterval;
 
-const nextSlide = () => {
-    // Remove active class from current
-    slides[currentSlide].classList.remove('active');
-    dots[currentSlide].classList.remove('active');
+if (slides.length > 0) {
+    let currentSlide = 0;
+    const intervalTime = 5000;
+    let slideInterval;
 
-    // Increment or loop
-    currentSlide = (currentSlide + 1) % slides.length;
-
-    // Add active class to new
-    slides[currentSlide].classList.add('active');
-    dots[currentSlide].classList.add('active');
-};
-
-slideInterval = setInterval(nextSlide, intervalTime);
-
-// Click on Dots
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        clearInterval(slideInterval);
+    const nextSlide = () => {
+        // Remove active class from current
         slides[currentSlide].classList.remove('active');
         dots[currentSlide].classList.remove('active');
 
-        currentSlide = index;
+        // Increment or loop
+        currentSlide = (currentSlide + 1) % slides.length;
 
+        // Add active class to new
         slides[currentSlide].classList.add('active');
         dots[currentSlide].classList.add('active');
-        slideInterval = setInterval(nextSlide, intervalTime);
+    };
+
+    slideInterval = setInterval(nextSlide, intervalTime);
+
+    // Click on Dots
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            slides[currentSlide].classList.remove('active');
+            dots[currentSlide].classList.remove('active');
+
+            currentSlide = index;
+
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+            slideInterval = setInterval(nextSlide, intervalTime);
+        });
     });
-});
+}
 
 // Theme Switcher Logic Removed (Carbon Monochrome is Final)
 // Code cleaned up.
