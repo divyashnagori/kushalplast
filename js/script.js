@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Smooth Transition Click Handling
     document.querySelectorAll('a').forEach(link => {
         const href = link.getAttribute('href');
-        const isInternal = href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:') && link.target !== '_blank';
+        const isInternal = href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:') && link.target !== '_blank' && !link.hasAttribute('download');
 
         // Prefetch on hover
         if (isInternal) {
