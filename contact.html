@@ -7,7 +7,12 @@
     <title>Contact Kushal Plast | Daman & Mumbai Factory Address</title>
     <meta name="description"
         content="Get in touch with Kushal Plast. Factory in Kachigam, Daman; Office in Jogeshwari, Mumbai. Call +91 98200 25278 for quotes.">
-    <link rel="canonical" href="https://kushalplast.com/contact.html">
+    <link rel="canonical" href="https://kushalplast.com/contact">
+    <meta property="og:title" content="Contact Kushal Plast | Daman & Mumbai Factory Address">
+    <meta property="og:description" content="Get in touch with Kushal Plast. Factory in Kachigam, Daman; Office in Jogeshwari, Mumbai. Call +91 98200 25278 for quotes.">
+    <meta property="og:image" content="https://kushalplast.com/assets/images/logo.jpg">
+    <meta property="og:url" content="https://kushalplast.com/contact">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="assets/images/favicon.jpg" type="image/x-icon">
     <meta name="google-site-verification" content="cuwpgK6utlBb4MYRajM7iu05BH50j9YADbick2vHanQ" />
     <!-- Fonts & CSS -->
@@ -87,6 +92,50 @@
             outline: 2px solid var(--secondary-color);
             border-color: transparent;
         }
+
+        /* 3D Card Styles */
+        .card-perspective {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 450px;
+            margin: 0 auto 2rem;
+            touch-action: none; /* Prevents mobile scrolling when dragging card */
+        }
+
+        .b-card {
+            width: 100%;
+            aspect-ratio: 9.02 / 5.88;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease-out;
+            cursor: grab;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border-radius: 12px;
+            will-change: transform;
+        }
+
+        .b-card:active {
+            cursor: grabbing;
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .card-front img, .card-back img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+        }
     </style>
 </head>
 
@@ -122,6 +171,23 @@
 
     <!-- Contact Info & Form -->
     <section class="section-padding container">
+        
+        <!-- 3D Business Card Presentation -->
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <p style="color: var(--secondary-color); font-weight: 600; margin-bottom: 1rem; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem;">Interactive Business Card</p>
+            <div class="card-perspective">
+                <div class="b-card">
+                    <div class="card-front">
+                        <img src="assets/images/business_card_front.png" alt="Kushal Plast Business Card Front" loading="lazy">
+                    </div>
+                    <div class="card-back">
+                        <img src="assets/images/business_card_back.png" alt="Kushal Plast Business Card Back" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            <a href="assets/kushal_plast.vcf" download="Kushal_Plast_Contact.vcf" class="btn btn-primary" style="display: inline-block; padding: 1rem 2rem; font-size: 1.1rem; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"><i class="fa-solid fa-address-card" style="margin-right: 8px;"></i> Save to Contacts</a>
+        </div>
+
         <div class="contact-grid">
 
             <!-- Info Column -->
@@ -173,14 +239,42 @@
                 </div>
             </div>
 
-            <!-- Map Column -->
-            <div class="contact-card" style="height: fit-content;">
-                <h3>Locate Us</h3>
-                <div style="width: 100%; height: 400px; background-color: #eee; border-radius: 5px; overflow: hidden;">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3739.861539437292!2d72.884305!3d20.388597999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0d01401c7d53f%3A0xa8177e2a4897bbdd!2sKushal%20Plast!5e0!3m2!1sen!2sin!4v1766521129198!5m2!1sen!2sin"
-                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- Form & Map Column -->
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                
+                <!-- Contact Form -->
+                <div class="contact-card" style="height: fit-content;">
+                    <h3>Reach Out To Us</h3>
+                    <form action="https://formsubmit.co/kushalplast@gmail.com" method="POST">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_subject" value="New Web Enquiry from Kushal Plast!">
+                        <input type="hidden" name="_template" value="table">
+                        
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" placeholder="Your Email address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="phone" placeholder="Your Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" rows="4" placeholder="Your Message (Optional)" style="resize: vertical;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1rem; padding: 1rem;">Submit Form</button>
+                    </form>
+                </div>
+
+                <!-- Map -->
+                <div class="contact-card" style="height: fit-content;">
+                    <h3>Locate Us</h3>
+                    <div style="width: 100%; height: 400px; background-color: #eee; border-radius: 5px; overflow: hidden;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3739.861539437292!2d72.884305!3d20.388597999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0d01401c7d53f%3A0xa8177e2a4897bbdd!2sKushal%20Plast!5e0!3m2!1sen!2sin!4v1766521129198!5m2!1sen!2sin"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
                 </div>
             </div>
 
@@ -222,11 +316,88 @@
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Kushal Plast. All Rights Reserved.</p>
-        </div>
+
     </footer>
     <script src="js/script.min.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cardContainer = document.querySelector('.card-perspective');
+            const card = document.querySelector('.b-card');
+            
+            let isDragging = false;
+            let startX, startY;
+            let currentX = 0, currentY = 0;
+            let initialRotationX = 0, initialRotationY = 0;
+
+            // Prevent image ghost dragging
+            card.querySelectorAll('img').forEach(img => {
+                img.addEventListener('dragstart', e => e.preventDefault());
+            });
+
+            const startDrag = (e) => {
+                isDragging = true;
+                card.style.transition = 'none';
+                startX = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+                startY = e.type.includes('mouse') ? e.pageY : e.touches[0].pageY;
+                
+                initialRotationX = currentX;
+                initialRotationY = currentY;
+            };
+
+            const onDrag = (e) => {
+                if (!isDragging) return;
+                
+                const x = e.type.includes('mouse') ? e.pageX : e.touches[0].pageX;
+                const y = e.type.includes('mouse') ? e.pageY : e.touches[0].pageY;
+                
+                const deltaX = x - startX;
+                const deltaY = y - startY;
+
+                currentY = initialRotationY + (deltaX * 0.6);
+                currentX = initialRotationX - (deltaY * 0.6);
+
+                // Prevent vertical spinning (clamp to realistic tilt)
+                if (currentX > 45) currentX = 45;
+                if (currentX < -45) currentX = -45;
+
+                card.style.transform = `rotateX(${currentX}deg) rotateY(${currentY}deg)`;
+            };
+
+            const endDrag = () => {
+                if (!isDragging) return;
+                isDragging = false;
+                card.style.transition = 'transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                
+                // Snap to nearest 180 degrees (Front or Back)
+                let targetY = Math.round(currentY / 180) * 180;
+                
+                currentX = 0;
+                currentY = targetY;
+                card.style.transform = `rotateX(${currentX}deg) rotateY(${currentY}deg)`;
+            };
+
+            cardContainer.addEventListener('mousedown', startDrag);
+            window.addEventListener('mousemove', onDrag);
+            window.addEventListener('mouseup', endDrag);
+
+            cardContainer.addEventListener('touchstart', startDrag, {passive: true});
+            window.addEventListener('touchmove', onDrag, {passive: true});
+            window.addEventListener('touchend', endDrag);
+            
+            // Subtle pop animation on load to hint interaction
+            setTimeout(() => {
+                if(currentY === 0 && !isDragging) {
+                    card.style.transition = 'transform 0.8s ease-in-out';
+                    card.style.transform = 'rotateX(10deg) rotateY(20deg)';
+                    setTimeout(() => {
+                        if(!isDragging) {
+                            card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+                        }
+                    }, 800);
+                }
+            }, 800);
+        });
+    </script>
 </body>
 
 </html>
