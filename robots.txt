@@ -1,4 +1,4 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
-Sitemap: https://kushalplast.com/sitemap.xml
+Sitemap: https://www.kushalplast.in/sitemap.xml
